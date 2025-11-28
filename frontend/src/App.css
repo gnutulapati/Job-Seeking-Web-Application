@@ -206,11 +206,7 @@ p {
   display: flex;
   gap: 12px;
   font-size: 16px;
-<<<<<<< HEAD
-  color: #5b77c9;
-=======
   color: #f1f3f6;
->>>>>>> c5502a81961d33cccbfc7e23199a06ceb7a69eb3
 }
 .footerShow div a {
   font-size: 20px;
