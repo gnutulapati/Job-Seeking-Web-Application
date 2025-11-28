@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import "./App.css";
 import { Context } from "./main";
+import { API_URL } from "./config";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
@@ -22,12 +23,9 @@ const App = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_API_URL}/api/v1/user/getuser`,
-          {
-            withCredentials: true,
-          }
-        );
+        const response = await axios.get(`${API_URL}/api/v1/user/getuser`, {
+          withCredentials: true,
+        });
         setUser(response.data.user);
         setIsAuthorized(true);
       } catch (error) {

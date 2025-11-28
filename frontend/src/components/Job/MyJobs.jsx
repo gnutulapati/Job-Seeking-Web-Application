@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { FaCheck } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
 import { Context } from "../../main";
+import { API_URL } from "../../config";
 import { useNavigate } from "react-router-dom";
 
 const MyJobs = () => {
@@ -16,10 +17,9 @@ const MyJobs = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const { data } = await axios.get(
-          `${import.meta.env.VITE_API_URL}/api/v1/job/getmyjobs`,
-          { withCredentials: true }
-        );
+        const { data } = await axios.get(`${API_URL}/api/v1/job/getmyjobs`, {
+          withCredentials: true,
+        });
         setMyJobs(data.myJobs);
       } catch (error) {
         toast.error(error.response.data.message);
@@ -47,7 +47,7 @@ const MyJobs = () => {
   const handleUpdateJob = async (jobId) => {
     const updatedJob = myJobs.find((job) => job._id === jobId);
     await axios
-      .put(`${import.meta.env.VITE_API_URL}/api/v1/job/update/${jobId}`, updatedJob, {
+      .put(`${API_URL}/api/v1/job/update/${jobId}`, updatedJob, {
         withCredentials: true,
       })
       .then((res) => {
@@ -62,7 +62,7 @@ const MyJobs = () => {
   //Function For Deleting Job
   const handleDeleteJob = async (jobId) => {
     await axios
-      .delete(`${import.meta.env.VITE_API_URL}/api/v1/job/delete/${jobId}`, {
+      .delete(`${API_URL}/api/v1/job/delete/${jobId}`, {
         withCredentials: true,
       })
       .then((res) => {
