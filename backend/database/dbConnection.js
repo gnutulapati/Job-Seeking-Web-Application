@@ -2,9 +2,13 @@ import mongoose from "mongoose";
 
 export const dbConnection = () => {
   mongoose
-    .connect(process.env.MONGO_URI, {
-      dbName: "MERN_JOB_SEEKING_WEBAPP",
-    })
+    .connect(
+      `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.psuqk.mongodb.net/blogwebsiteDB`,
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
+    )
     .then(() => {
       console.log("Connected to database.");
     })
