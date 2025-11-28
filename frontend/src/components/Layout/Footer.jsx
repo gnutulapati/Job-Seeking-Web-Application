@@ -19,7 +19,7 @@ const Footer = () => {
           <FaLinkedin />
         </Link>
         <Link
-          to={"https://nutulapati-gourav-potfolio.netlify.app/"}
+          to={"https://nutulapati-gourav-portfolio.netlify.app/"}
           target="_blank"
         >
           <FaGlobe />
