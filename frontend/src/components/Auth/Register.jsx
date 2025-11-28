@@ -43,11 +43,18 @@ const Register = () => {
     }
   };
 
+<<<<<<< HEAD
   if(isAuthorized){
     return <Navigate to={'/'}/>
   }
 
 
+=======
+  if (isAuthorized) {
+    return <Navigate to={"/"} />;
+  }
+
+>>>>>>> c5502a81961d33cccbfc7e23199a06ceb7a69eb3
   return (
     <>
       <section className="authPage">

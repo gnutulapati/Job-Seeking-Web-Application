@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
+<<<<<<< HEAD
     "cloudinary": "^1.41.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
@@ -21,5 +22,19 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.3",
     "validator": "^13.11.0"
+=======
+    "cloudinary": "^1.41.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-fileupload": "^1.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.0",
+    "validator": "^13.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+>>>>>>> c5502a81961d33cccbfc7e23199a06ceb7a69eb3
   }
 }
