@@ -1,0 +1,184 @@
+/* Navbar Styles */
+nav {
+  background: var(--bg-tertiary);
+  padding: 0 20px;
+}
+
+nav .container {
+  max-width: 1500px;
+  min-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+nav .logo img {
+  width: 130px;
+}
+
+nav .menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+}
+
+nav .menu button {
+  height: fit-content;
+  padding: 7px;
+  border: 1px solid var(--text-light);
+  color: var(--text-light);
+  background: transparent;
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+nav .menu button:hover {
+  color: var(--text-light);
+  background: var(--accent-hover);
+  transition: all 0.3s;
+  cursor: pointer;
+  font-weight: 500;
+  border: 1px solid var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+nav .menu li a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 20px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav .menu li a:hover {
+  color: var(--accent-primary);
+  transition: all 0.3s;
+}
+
+nav .menu li a::before {
+  content: "";
+  position: absolute;
+  background: var(--accent-primary);
+  height: 1px;
+  width: 100%;
+  left: -100%;
+  bottom: 0;
+  transition: all 0.3s;
+}
+
+nav .menu li a:hover::before {
+  transition: all 0.3s;
+  left: 0;
+}
+
+/* Theme Toggle Button */
+nav .theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  margin-right: 15px;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+nav .theme-toggle:hover {
+  color: var(--accent-primary);
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(20deg) scale(1.1);
+}
+
+nav .hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.navbarHide {
+  display: none;
+}
+
+/* Responsive Navbar */
+@media (max-width: 1520px) {
+  nav .container {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 1130px) {
+  nav .hamburger {
+    display: block;
+    font-size: 35px;
+    color: var(--text-light);
+  }
+
+  nav .container {
+    align-items: center;
+  }
+
+  .menu {
+    position: fixed;
+    top: 120px;
+    background: var(--bg-secondary);
+    left: -100%;
+    transition: all 0.3s;
+    width: 400px;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    gap: 30px;
+    align-items: flex-start;
+    padding-left: 25px;
+  }
+
+  nav .show-menu {
+    position: fixed;
+    top: 120px;
+    background: var(--bg-secondary);
+    transition: all 0.3s;
+    left: 0;
+    width: 400px;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    gap: 30px;
+    align-items: flex-start;
+    padding-left: 25px;
+    box-shadow: 9px 0px 16px 0px var(--shadow-color);
+  }
+
+  nav .show-menu li a {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  nav .show-menu button {
+    color: var(--text-primary);
+    border: 1px solid var(--accent-primary);
+    font-weight: 600;
+  }
+
+  nav .show-menu button:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-light);
+  }
+
+  nav .theme-toggle {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 490px) {
+  .menu,
+  nav .show-menu {
+    width: 100%;
+  }
+}

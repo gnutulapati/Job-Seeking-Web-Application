@@ -4,10 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { FaSun, FaMoon } from "react-icons/fa";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
-  const { isAuthorized, setIsAuthorized, user } = useContext(Context);
+  const { isAuthorized, setIsAuthorized, user, theme, setTheme } =
+    useContext(Context);
   const navigateTo = useNavigate();
 
   const handleLogout = async () => {
@@ -24,6 +26,10 @@ const Navbar = () => {
     } catch (error) {
       toast.error(error.response.data.message), setIsAuthorized(true);
     }
+  };
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
   };
 
   return (
@@ -69,6 +75,9 @@ const Navbar = () => {
 
           <button onClick={handleLogout}>LOGOUT</button>
         </ul>
+        <div className="theme-toggle" onClick={toggleTheme}>
+          {theme === "light" ? <FaMoon /> : <FaSun />}
+        </div>
         <div className="hamburger">
           <GiHamburgerMenu onClick={() => setShow(!show)} />
         </div>

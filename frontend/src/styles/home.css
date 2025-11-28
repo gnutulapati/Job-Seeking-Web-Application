@@ -1,0 +1,429 @@
+/* Home Page Sections */
+
+/* Hero Section */
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  padding: 75px 0 50px 0;
+}
+
+.heroSection .container,
+.heroSection .details {
+  min-width: 1500px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.heroSection .container {
+  display: flex;
+  height: 450px;
+  margin-bottom: 1.75rem;
+}
+
+.heroSection .container .title,
+.heroSection .container .image {
+  flex: 1;
+}
+
+.heroSection .container .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heroSection .container .title h1 {
+  max-width: 600px;
+  color: var(--text-primary);
+}
+
+.heroSection .container .title p {
+  margin-top: 1.5rem;
+  max-width: 600px;
+  color: var(--text-primary);
+}
+
+.heroSection .container .image {
+  overflow: hidden;
+}
+
+.heroSection .container .image img {
+  width: 100%;
+  height: 100%;
+}
+
+.heroSection .details {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+
+.heroSection .details .card {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: var(--card-gradient);
+  width: 220px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.heroSection .details .card .icon {
+  font-size: 24px;
+  background: var(--accent-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: var(--accent-primary);
+}
+
+.heroSection .details .card .content p:first-child {
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.heroSection .details .card .content p:nth-child(2) {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 5px;
+}
+
+.heroSection .details .card:hover {
+  transition: all 0.3s;
+  transform: translateY(-5px);
+  box-shadow: 2px 10px 20px -1px var(--shadow-color);
+}
+
+/* How It Works Section */
+.howitworks {
+  background: transparent;
+  padding: 80px 0;
+}
+
+.howitworks .container {
+  max-width: 1500px;
+  min-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  padding: 50px 0;
+  gap: 50px;
+}
+
+.howitworks .container .banner {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.howitworks .container .banner .card {
+  background: var(--card-gradient);
+  color: var(--text-primary);
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  height: 350px;
+  padding: 30px 50px;
+  gap: 12px;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.howitworks .container .banner .card:nth-child(2) {
+  background: var(--dark-card-gradient);
+  color: var(--text-light);
+}
+
+.howitworks .container .banner .card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 40px var(--shadow-color);
+}
+
+.howitworks .container .banner .card svg {
+  font-size: 30px;
+  color: var(--accent-primary);
+}
+
+.howitworks .container .banner .card p:last-child {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.howitworks .container .banner .card:nth-child(2) p:last-child {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Categories Section */
+.categories {
+  min-width: 1500px;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 50px 0;
+  gap: 35px;
+}
+
+.categories .banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 35px;
+  padding: 20px 0;
+}
+
+.categories .banner .card {
+  width: 320px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--card-gradient);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px var(--shadow-color);
+}
+
+.categories .banner .card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 30px var(--shadow-color);
+}
+
+.categories .banner .card .icon {
+  font-size: 28px;
+  padding: 14px;
+  background: var(--accent-bg);
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.categories .banner .card .text p:first-child {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.categories .banner .card .text p:nth-child(2) {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-secondary);
+}
+
+/* Companies Section */
+.companies {
+  background: transparent;
+  padding: 80px 0;
+}
+
+.companies .container {
+  min-width: 1500px;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.companies .container .banner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.companies .container .banner .card {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  background: var(--card-gradient);
+  padding: 24px;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px var(--shadow-color);
+}
+
+.companies .container .banner .card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 30px var(--shadow-color);
+}
+
+.companies .container .banner .card .content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.companies .container .banner .card .content .icon {
+  padding: 12px;
+  font-size: 26px;
+  color: var(--accent-primary);
+  background: var(--accent-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+
+.companies .container .banner .card .content .text p:first-child {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--text-primary);
+}
+
+.companies .container .banner .card .content .text p:last-child {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.companies .container .banner .card button {
+  color: var(--text-light);
+  background: var(--accent-primary);
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  padding: 12px 0;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.companies .container .banner .card button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+/* Responsive styles for home sections - add media queries at the end */
+@media (max-width: 1520px) {
+  .heroSection .container,
+  .heroSection .details,
+  .howitworks .container,
+  .categories,
+  .companies .container {
+    min-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .heroSection .container {
+    flex-direction: column-reverse;
+    position: relative;
+    min-height: 600px;
+  }
+
+  .heroSection .container .title {
+    z-index: 1;
+    text-align: center;
+  }
+
+  .heroSection .container .title h1,
+  .heroSection .container .title p {
+    max-width: 100%;
+  }
+
+  .heroSection .container .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 950px) {
+  .heroSection .details {
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-evenly;
+  }
+
+  .heroSection .details .card {
+    width: 300px;
+    flex: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .howitworks .container .banner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .howitworks .container .banner .card {
+    flex: none;
+    width: 400px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 714px) {
+  .categories {
+    align-items: center;
+  }
+
+  .categories .banner {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 670px) {
+  .heroSection .details .card {
+    max-width: 350px;
+    min-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .howitworks .container .banner .card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .heroSection .details .card {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 350px) {
+  .categories .banner .card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .companies .container .banner {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .companies .container .banner .card {
+    width: 420px;
+  }
+}
+
+@media (max-width: 470px) {
+  .companies .container .banner .card {
+    width: 100%;
+  }
+}

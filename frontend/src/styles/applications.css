@@ -1,0 +1,395 @@
+/* Application Forms and My Applications/Jobs Pages */
+
+/* Application Form */
+.application {
+  background: var(--bg-secondary);
+  padding: 50px 20px;
+}
+
+.application .container {
+  min-width: 1500px;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.application .container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.application .container form .wrapper {
+  display: flex;
+  gap: 5vw;
+}
+
+.application .container form .wrapper input,
+.application .container form .wrapper select,
+.application .container form .wrapper textarea {
+  flex: 1;
+  font-size: 20px;
+  padding: 7px 4px;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid gray;
+  color: var(--text-primary);
+}
+
+.application .container form input,
+.application .container form textarea {
+  font-size: 20px;
+  padding: 7px 4px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid gray;
+  color: var(--text-primary);
+}
+
+.application .container form input:focus,
+.application .container form .wrapper input:focus,
+.application .container form .wrapper select:focus,
+.application .container form textarea:focus {
+  outline: none;
+}
+
+.application .container form button {
+  width: 100%;
+  background: var(--accent-primary);
+  font-size: 20px;
+  padding: 10px 30px;
+  border: none;
+  color: var(--text-light);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.application .container form button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+/* My Applications */
+.my_applications {
+  background: var(--bg-secondary);
+  padding: 50px 20px;
+  min-height: 870px;
+}
+
+.my_applications .container {
+  min-width: 1500px;
+  max-width: 1500px;
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.my_applications .banner {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+
+.my_applications .banner .card {
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 15px;
+  width: 600px;
+}
+
+.my_applications .banner .card .detail {
+  display: flex;
+  gap: 7px;
+}
+
+.my_applications .banner .card .detail span {
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.my_applications .banner .card .detail p {
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+.my_applications .banner .card .btn_area {
+  padding-top: 12px;
+  display: flex;
+  gap: 20px;
+}
+
+.my_applications .banner .card .btn_area button {
+  padding: 7px 30px;
+  background: var(--accent-primary);
+  color: var(--text-light);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.my_applications .banner .card .btn_area button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* Job Post Form */
+.job_post {
+  background: var(--bg-secondary);
+  padding: 50px 20px;
+  min-height: 870px;
+  display: flex;
+  align-items: center;
+}
+
+.job_post .container {
+  max-width: 1500px;
+  min-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.job_post .container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.job_post .container form .wrapper {
+  display: flex;
+  gap: 5vw;
+}
+
+.job_post .container form .wrapper input,
+.job_post .container form .wrapper select {
+  flex: 1;
+  font-size: 20px;
+  padding: 7px 4px;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid gray;
+  color: var(--text-primary);
+}
+
+.job_post .container form input,
+.job_post .container form textarea {
+  font-size: 20px;
+  padding: 7px 4px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid gray;
+  color: var(--text-primary);
+}
+
+.job_post .container form input:focus,
+.job_post .container form .wrapper input:focus,
+.job_post .container form .wrapper select:focus,
+.job_post .container form textarea:focus,
+.job_post .container form .salary_wrapper select:focus {
+  outline: none;
+}
+
+.job_post .container form .salary_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.job_post .container form .salary_wrapper p {
+  color: #d9534f;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.job_post .container form .salary_wrapper select {
+  width: fit-content;
+  font-size: 20px;
+  padding: 7px 4px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid gray;
+  color: var(--text-primary);
+}
+
+.job_post .container form .salary_wrapper .ranged_salary {
+  display: flex;
+  gap: 5vw;
+}
+
+.job_post .container form button {
+  width: 100%;
+  background: var(--accent-primary);
+  font-size: 20px;
+  padding: 10px 30px;
+  border: none;
+  color: var(--text-light);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.job_post .container form button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+/* My Jobs */
+.myJobs {
+  background: var(--bg-secondary);
+  padding: 50px 20px;
+  min-height: 870px;
+}
+
+.myJobs .container {
+  min-width: 1500px;
+  max-width: 1500px;
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.myJobs .container .banner {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.myJobs .container .banner .card {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 0;
+}
+
+.myJobs .container .banner .card .content {
+  flex: 3;
+  display: flex;
+  gap: 20px;
+}
+
+.myJobs .container .banner .card .content span {
+  font-size: 20px;
+  margin-right: 6px;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.myJobs .container .banner .card .content input,
+.myJobs .container .banner .card .content select {
+  background: transparent;
+  font-size: 16px;
+  border: none;
+  color: var(--text-primary);
+  padding: 7px 4px;
+}
+
+.myJobs .container .banner .card .content input:enabled,
+.myJobs .container .banner .card .content select:enabled {
+  border-bottom: 1px solid gainsboro;
+}
+
+.myJobs .container .banner .card .content input:disabled,
+.myJobs .container .banner .card .content select:disabled {
+  color: gray;
+}
+
+.myJobs .container .banner .card .content input:focus,
+.myJobs .container .banner .card .content select:focus {
+  outline: none;
+}
+
+.myJobs .container .banner .card .button_wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.myJobs .container .banner .card .button_wrapper button {
+  padding: 7px 12px;
+  border: none;
+  background: var(--accent-primary);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.myJobs .container .banner .card .button_wrapper button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1520px) {
+  .application .container,
+  .my_applications .container,
+  .job_post .container,
+  .myJobs .container {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 870px) {
+  .my_applications .banner {
+    justify-content: center;
+  }
+
+  .my_applications .banner .card {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 630px) {
+  .application .container form .wrapper,
+  .job_post .container form .wrapper,
+  .job_post .container form .salary_wrapper,
+  .job_post .container form .salary_wrapper .ranged_salary {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .job_post .container form .salary_wrapper select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 860px) {
+  .myJobs .container .banner .card {
+    flex-direction: column;
+  }
+
+  .myJobs .container .banner .card .content {
+    flex-direction: column;
+  }
+}
