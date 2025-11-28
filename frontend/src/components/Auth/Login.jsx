@@ -7,13 +7,14 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Context } from "../../main";
 import { API_URL } from "../../config";
+import InteractiveBackground from "../Layout/InteractiveBackground";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
 
-  const { isAuthorized, setIsAuthorized } = useContext(Context);
+  const { isAuthorized, setIsAuthorized, theme } = useContext(Context);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -44,10 +45,14 @@ const Login = () => {
 
   return (
     <>
+      <InteractiveBackground />
       <section className="authPage">
         <div className="container">
           <div className="header">
-            <img src="/JobZeelogo.png" alt="logo" />
+            <img
+              src={theme === "light" ? "/grey_bg.png" : "/transparent.png"}
+              alt="logo"
+            />
             <h3>Login to your account</h3>
           </div>
           <form>
@@ -91,9 +96,6 @@ const Login = () => {
             </button>
             <Link to={"/register"}>Register Now</Link>
           </form>
-        </div>
-        <div className="banner">
-          <img src="/login.png" alt="login" />
         </div>
       </section>
     </>

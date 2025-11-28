@@ -1,0 +1,48 @@
+.interactive-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* Changed from -1 to 0 to be visible above body bg */
+  overflow: hidden;
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px); /* Requested 60px blur */
+  opacity: 0.8;
+  will-change: transform;
+  /* Radial gradient for center glow effect */
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.8),
+    currentColor
+  );
+  box-shadow: 0 0 40px 20px currentColor; /* Outer glow */
+}
+
+.blob-large {
+  width: 400px;
+  height: 400px;
+  background: #8a2be2; /* Blue Violet */
+}
+
+.blob-medium {
+  width: 250px;
+  height: 250px;
+  background: #4169e1; /* Royal Blue */
+}
+
+.blob-small {
+  width: 150px;
+  height: 150px;
+  background: #ffc107; /* Amber */
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .blob {
+  opacity: 0.5;
+}

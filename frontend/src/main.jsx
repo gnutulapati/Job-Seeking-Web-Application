@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
+import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App.jsx";
 
 export const Context = createContext({

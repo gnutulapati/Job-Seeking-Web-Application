@@ -1,40 +1,54 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
 
 /* CSS Custom Properties for Theming */
 :root[data-theme="light"] {
   --bg-primary: #ffffff;
-  --bg-secondary: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
-  --bg-tertiary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --bg-accent: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-  --text-primary: #2d3748;
-  --text-secondary: #718096;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #6c757d; /* Grey for footer in light mode */
+  --bg-accent: #ffc107;
+
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
   --text-light: #ffffff;
-  --accent-primary: #11998e;
-  --accent-hover: #0d8070;
-  --accent-bg: rgba(17, 153, 142, 0.1);
-  --border-color: #e2e8f0;
-  --shadow-color: rgba(0, 0, 0, 0.08);
-  --input-bg: rgba(0, 0, 0, 0.03);
-  --card-gradient: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
-  --dark-card-gradient: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+
+  --accent-primary: #ffc107;
+  --accent-hover: #ffca2c;
+  --accent-bg: rgba(255, 193, 7, 0.1);
+
+  --border-color: #dee2e6;
+  --shadow-color: rgba(0, 0, 0, 0.05);
+  --input-bg: #f8f9fa;
+
+  --card-gradient: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  --dark-card-gradient: linear-gradient(135deg, #212529 0%, #343a40 100%);
+
+  --primary-light: #fff3cd;
+  --primary-dark: #cc9a06;
 }
 
 :root[data-theme="dark"] {
-  --bg-primary: #0f172a;
-  --bg-secondary: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  --bg-tertiary: linear-gradient(135deg, #334155 0%, #1e293b 100%);
-  --bg-accent: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
-  --text-primary: #f1f5f9;
-  --text-secondary: #cbd5e1;
+  --bg-primary: #212529;
+  --bg-secondary: #343a40;
+  --bg-tertiary: #495057;
+  --bg-accent: #ffc107;
+
+  --text-primary: #ffffff;
+  --text-secondary: #adb5bd;
   --text-light: #ffffff;
-  --accent-primary: #f59e0b;
-  --accent-hover: #d97706;
-  --accent-bg: rgba(245, 158, 11, 0.15);
-  --border-color: #334155;
-  --shadow-color: rgba(0, 0, 0, 0.5);
-  --input-bg: rgba(255, 255, 255, 0.08);
-  --card-gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  --dark-card-gradient: linear-gradient(135deg, #475569 0%, #334155 100%);
+
+  --accent-primary: #ffc107;
+  --accent-hover: #ffca2c;
+  --accent-bg: rgba(255, 193, 7, 0.15);
+
+  --border-color: #495057;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --input-bg: #343a40;
+
+  --card-gradient: linear-gradient(135deg, #343a40 0%, #212529 100%);
+  --dark-card-gradient: linear-gradient(135deg, #495057 0%, #343a40 100%);
+
+  --primary-light: #495057;
+  --primary-dark: #cc9a06;
 }
 
 /* Base Styles */
@@ -43,15 +57,17 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   min-height: 100vh;
+  overflow-x: hidden; /* Moved from * */
+  padding-top: 70px; /* Compensate for fixed navbar */
 }
 
 html[data-theme="light"] body {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   background-attachment: fixed;
 }
 
 html[data-theme="dark"] body {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(135deg, #212529 0%, #343a40 100%);
   background-attachment: fixed;
 }
 
@@ -59,12 +75,10 @@ html[data-theme="dark"] body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* overflow-x: hidden; Removed to prevent sticky/scroll issues */
+  font-family: "Outfit", sans-serif;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 ::-webkit-scrollbar {
@@ -78,33 +92,27 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
   font-weight: 600;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
 }
-
 h2 {
-  font-size: 3rem;
-  font-weight: 600;
+  font-size: 2.5rem;
 }
-
 h3 {
-  font-size: 2.25rem;
+  font-size: 2rem;
 }
-
 h4 {
-  font-size: 1.875rem;
+  font-size: 1.75rem;
 }
-
 h5 {
   font-size: 1.5rem;
 }
-
 h6 {
   font-size: 1.25rem;
 }
@@ -112,37 +120,16 @@ h6 {
 p {
   font-size: 1rem;
   color: var(--text-primary);
-  line-height: 1.7;
+  line-height: 1.6;
   font-weight: 400;
 }
 
 @media (max-width: 1520px) {
   h1 {
-    font-size: 2.75rem;
-  }
-  h2 {
     font-size: 2.5rem;
   }
-  h3 {
-    font-size: 2rem;
-  }
-  h4 {
-    font-size: 1.75rem;
-  }
-  h5 {
-    font-size: 1.4rem;
-  }
-  h6 {
-    font-size: 1.15rem;
-  }
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.25rem;
-  }
   h2 {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
   h3 {
     font-size: 1.75rem;
@@ -155,5 +142,26 @@ p {
   }
   h6 {
     font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.25rem;
+  }
+  h5 {
+    font-size: 1.1rem;
+  }
+  h6 {
+    font-size: 1rem;
   }
 }

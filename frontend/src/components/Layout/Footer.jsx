@@ -1,31 +1,28 @@
 import React, { useContext } from "react";
 import { Context } from "../../main";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaYoutube, FaLinkedin } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
+import { FaGithub, FaLinkedin, FaGlobe } from "react-icons/fa";
 
 const Footer = () => {
   const { isAuthorized } = useContext(Context);
   return (
     <footer className={isAuthorized ? "footerShow" : "footerHide"}>
+      <div>&copy; JobSeekingApp - All rights reserved to N Gourav</div>
       <div>
-        &copy; Registration Numbers - 22BCE9373 - 22BCE8689 - 22BCE20450
-      </div>
-      <div>
+        <Link to={"https://github.com/gnutulapati"} target="_blank">
+          <FaGithub />
+        </Link>
         <Link
-          to={"https://www.facebook.com/profile.php?id=100030535123397"}
+          to={"https://www.linkedin.com/in/gourav-nutulapati-5433342a4/"}
           target="_blank"
         >
-          <FaFacebookF />
-        </Link>
-        <Link to={"https://www.youtube.com/@CodeWithZeeshu"} target="_blank">
-          <FaYoutube />
-        </Link>
-        <Link to={"https://www.youtube.com/@CodeWithZeeshu"} target="_blank">
           <FaLinkedin />
         </Link>
-        <Link to={"https://www.instagram.com/z_4_zeeshuuu/"} target="_blank">
-          <RiInstagramFill />
+        <Link
+          to={"https://nutulapati-gourav-potfolio.netlify.app/"}
+          target="_blank"
+        >
+          <FaGlobe />
         </Link>
       </div>
     </footer>
