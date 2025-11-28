@@ -278,76 +278,182 @@
 .myJobs .container .banner {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
   flex-direction: column;
+  gap: 30px;
 }
 
 .myJobs .container .banner .card {
-  width: 100%;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px var(--shadow-color);
   display: flex;
+  flex-direction: column;
   gap: 20px;
-  border-bottom: 1px solid var(--border-color);
-  padding: 10px 0;
-}
-
-.myJobs .container .banner .card .content {
-  flex: 3;
-  display: flex;
-  gap: 20px;
-}
-
-.myJobs .container .banner .card .content span {
-  font-size: 20px;
-  margin-right: 6px;
-  font-weight: bold;
-  color: var(--text-primary);
-}
-
-.myJobs .container .banner .card .content input,
-.myJobs .container .banner .card .content select {
-  background: transparent;
-  font-size: 16px;
-  border: none;
-  color: var(--text-primary);
-  padding: 7px 4px;
-}
-
-.myJobs .container .banner .card .content input:enabled,
-.myJobs .container .banner .card .content select:enabled {
-  border-bottom: 1px solid gainsboro;
-}
-
-.myJobs .container .banner .card .content input:disabled,
-.myJobs .container .banner .card .content select:disabled {
-  color: gray;
-}
-
-.myJobs .container .banner .card .content input:focus,
-.myJobs .container .banner .card .content select:focus {
-  outline: none;
-}
-
-.myJobs .container .banner .card .button_wrapper {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-.myJobs .container .banner .card .button_wrapper button {
-  padding: 7px 12px;
-  border: none;
-  background: var(--accent-primary);
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
   transition: all 0.3s ease;
 }
 
+/* Dark mode specific: Light Grey Card */
+[data-theme="dark"] .myJobs .container .banner .card {
+  background: #495057; /* Light grey/slate for dark mode */
+  border: 1px solid #6c757d;
+}
+
+.myJobs .container .banner .card .content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.myJobs .container .banner .card .content .short_fields {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.myJobs .container .banner .card .content .long_field {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.myJobs .container .banner .card .content div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.myJobs .container .banner .card .content span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+[data-theme="dark"] .myJobs .container .banner .card .content span {
+  color: #e9ecef; /* Lighter text for dark mode card */
+}
+
+.myJobs .container .banner .card .content input,
+.myJobs .container .banner .card .content select,
+.myJobs .container .banner .card .content textarea {
+  background: transparent;
+  font-size: 16px;
+  border: 1px solid transparent;
+  color: var(--text-primary);
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+  font-family: "Outfit", sans-serif;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .myJobs .container .banner .card .content input,
+[data-theme="dark"] .myJobs .container .banner .card .content select,
+[data-theme="dark"] .myJobs .container .banner .card .content textarea {
+  color: #ffffff;
+}
+
+/* View Mode (Disabled): Look like normal text */
+.myJobs .container .banner .card .content input:disabled,
+.myJobs .container .banner .card .content select:disabled,
+.myJobs .container .banner .card .content textarea:disabled {
+  background: transparent;
+  border: none;
+  padding: 10px 0; /* Remove horizontal padding to align with label */
+  color: var(--text-primary);
+  cursor: text; /* Optional: indicates text */
+  opacity: 1; /* Ensure text is fully visible */
+  -webkit-text-fill-color: var(
+    --text-primary
+  ); /* Fix for some browsers dimming disabled text */
+}
+
+[data-theme="dark"] .myJobs .container .banner .card .content input:disabled,
+[data-theme="dark"] .myJobs .container .banner .card .content select:disabled,
+[data-theme="dark"]
+  .myJobs
+  .container
+  .banner
+  .card
+  .content
+  textarea:disabled {
+  background: transparent;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+}
+
+/* Edit Mode (Enabled): Look like inputs */
+.myJobs .container .banner .card .content input:enabled,
+.myJobs .container .banner .card .content select:enabled,
+.myJobs .container .banner .card .content textarea:enabled {
+  border: 1px solid var(--accent-primary);
+  background: var(--input-bg);
+  padding: 10px; /* Restore padding for input look */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .myJobs .container .banner .card .content input:enabled,
+[data-theme="dark"] .myJobs .container .banner .card .content select:enabled,
+[data-theme="dark"] .myJobs .container .banner .card .content textarea:enabled {
+  background: #343a40; /* Darker input bg for contrast */
+  border-color: #ffc107;
+}
+
+.myJobs .container .banner .card .content input:focus,
+.myJobs .container .banner .card .content select:focus,
+.myJobs .container .banner .card .content textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+.myJobs .container .banner .card .button_wrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 10px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+}
+
+.myJobs .container .banner .card .button_wrapper button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.myJobs .container .banner .card .button_wrapper .edit_btn {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+.myJobs .container .banner .card .button_wrapper .delete_btn {
+  background: #dc3545;
+  color: white;
+}
+
+.myJobs .container .banner .card .button_wrapper .check_btn {
+  background: #198754;
+  color: white;
+}
+
+.myJobs .container .banner .card .button_wrapper .cross_btn {
+  background: #dc3545;
+  color: white;
+}
+
 .myJobs .container .banner .card .button_wrapper button:hover {
-  background: var(--accent-hover);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  opacity: 0.9;
 }
 
 /* Responsive */
