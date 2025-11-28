@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../../main";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { API_URL } from "../../config";
@@ -29,6 +29,27 @@ const Navbar = () => {
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
+
+  const location = useLocation();
+  const isAuthPage =
+    location.pathname === "/login" || location.pathname === "/register";
+
+  if (isAuthPage) {
+    return (
+      <div
+        style={{
+          position: "absolute",
+          top: "20px",
+          right: "20px",
+          zIndex: 1000,
+        }}
+      >
+        <div className="theme-toggle" onClick={toggleTheme}>
+          {theme === "light" ? <FaMoon /> : <FaSun />}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <nav className={isAuthorized ? "navbarShow" : "navbarHide"}>
